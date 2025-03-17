@@ -13,5 +13,5 @@ variable "ec2_instance_type" {
 variable "public_key" {
   description = "Public key to be used for SSH access."
   type        = string
-  default = "<type your public key here>"
+  default = ""
 }

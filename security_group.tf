@@ -11,3 +11,10 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
     ip_protocol          = "tcp"
     cidr_ipv4        = "0.0.0.0/0"
 }
+
+# add outbound rule to allow all traffic
+resource "aws_vpc_security_group_egress_rule" "allow_all" {
+    security_group_id = aws_security_group.allow_ssh.id
+    ip_protocol          = "-1"
+    cidr_ipv4        = "0.0.0.0/0"
+}
